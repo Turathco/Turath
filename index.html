@@ -3,112 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TURATH | Wear Your Heritage</title>
+    <title>TURATH | Authentic Heritage</title>
     <style>
-        :root { --gold: #c5a059; --black: #0d0d0d; }
+        :root { --gold: #c5a059; --pure-black: #000000; --desert-dark: #120f0d; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
-            background-color: var(--black); 
+            background-color: var(--pure-black); 
             color: white; 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            font-family: 'Times New Roman', serif; 
+            overflow-x: hidden;
         }
 
-        /* Top Navigation Bar - Matches the Shopify look */
+        /* Top Bar - Pure Black to hide Logo background */
         nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 5%;
-            background: var(--black);
-            border-bottom: 1px solid #222;
+            padding: 15px 5%;
+            background: var(--pure-black);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .nav-logo {
-            height: 50px; /* Small and elegant on the left */
+            height: 60px;
             width: auto;
+            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.2));
         }
 
         .nav-links a {
-            color: white;
+            color: var(--gold);
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Large Hero Image Section */
-        .hero {
-            position: relative;
-            height: 80vh;
-            width: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1519011985187-444d62641929?q=80&w=2000'); /* Placeholder image */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            padding: 60px 5%;
-        }
-
-        .hero-text {
-            max-width: 600px;
-        }
-
-        .hero-text p {
-            text-transform: uppercase;
+            margin-left: 20px;
             font-size: 0.7rem;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .hero-text h1 {
+        /* Hero Section - Sand Texture Background */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(to bottom, var(--pure-black), var(--desert-dark)), 
+                        url('https://www.transparenttextures.com/patterns/sandpaper.png');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .hero h1 {
             font-size: 3rem;
-            font-weight: 500;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            letter-spacing: 12px;
+            color: var(--gold);
+            font-weight: normal;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
         }
 
         /* Product Sections */
-        .section-padding { padding: 60px 5%; }
-        .section-title { 
-            font-size: 1.5rem; 
-            margin-bottom: 30px; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
+        .content-area {
+            background-color: var(--desert-dark);
+            background-image: url('https://www.transparenttextures.com/patterns/sandpaper.png');
+            padding: 60px 5%;
+        }
+
+        .section-header {
+            border-bottom: 1px solid var(--gold);
+            display: inline-block;
+            margin-bottom: 40px;
+            padding-bottom: 5px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
         }
 
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 25px;
+            margin-bottom: 80px;
         }
 
         @media (min-width: 768px) {
-            .product-grid { grid-template-columns: repeat(4, 1fr); }
-            .hero-text h1 { font-size: 4.5rem; }
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
-        .card { text-align: left; }
-        .card-img {
-            width: 100%;
-            aspect-ratio: 3/4;
-            background: #1a1a1a;
-            margin-bottom: 10px;
+        .item-card {
+            background: rgba(0,0,0,0.4);
             border: 1px solid #222;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
         }
-        .card h3 { font-size: 0.9rem; font-weight: normal; margin-bottom: 5px; }
-        .card p { color: var(--gold); font-size: 0.85rem; }
 
-        .btn-white {
-            background: white;
-            color: black;
-            padding: 12px 30px;
-            text-decoration: none;
+        .item-card:hover { border-color: var(--gold); }
+
+        .item-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #050505;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-style: italic;
+            border: 1px solid #111;
+        }
+
+        .item-card h3 { font-size: 0.9rem; margin-bottom: 8px; font-weight: normal; color: #eee; }
+        .price { color: var(--gold); font-size: 0.8rem; letter-spacing: 1px; }
+
+        .btn-order {
+            margin-top: 15px;
             display: inline-block;
-            font-weight: bold;
-            font-size: 0.8rem;
+            padding: 10px 20px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.7rem;
             text-transform: uppercase;
         }
     </style>
@@ -118,48 +146,59 @@
 <nav>
     <img src="Logo.png" alt="Turath" class="nav-logo">
     <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#catalog">Catalog</a>
+        <a href="#thobes">Thobes</a>
+        <a href="#soaps">Soaps</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <section class="hero">
-    <div class="hero-text">
-        <p>Welcome Industry Insiders</p>
-        <h1>Wear Your Heritage.</h1>
-        <a href="#catalog" class="btn-white">Shop Collections</a>
-    </div>
+    <h1>TURATH</h1>
+    <p>Wear Your Heritage</p>
 </section>
 
-<div class="section-padding" id="catalog">
-    <h2 class="section-title">Turath Collections</h2>
+<div class="content-area">
+
+    <div class="section-header" id="thobes">
+        <h2>Omani Thobes</h2>
+    </div>
     <div class="product-grid">
-        <div class="card">
-            <div class="card-img"></div>
-            <h3>Omani Thobe</h3>
-            <p>View Collection</p>
+        <div class="item-card">
+            <div class="item-img">Thobe Photo Here</div>
+            <h3>Omani 32 Embroidery</h3>
+            <p class="price">Luxury Cotton</p>
+            <a href="#" class="btn-order">Inquire</a>
         </div>
-        <div class="card">
-            <div class="card-img"></div>
-            <h3>Kuwaiti Dishdasha</h3>
-            <p>View Collection</p>
-        </div>
-        <div class="card">
-            <div class="card-img"></div>
-            <h3>Signature Perfumes</h3>
-            <p>Discover Scents</p>
-        </div>
-        <div class="card">
-            <div class="card-img"></div>
-            <h3>Accessories</h3>
-            <p>Shop Now</p>
+        <div class="item-card">
+            <div class="item-img">Thobe Photo Here</div>
+            <h3>Classic Omani Dishdasha</h3>
+            <p class="price">Hand-Stitched</p>
+            <a href="#" class="btn-order">Inquire</a>
         </div>
     </div>
+
+    <div class="section-header" id="soaps">
+        <h2>Omani Soaps</h2>
+    </div>
+    <div class="product-grid">
+        <div class="item-card">
+            <div class="item-img">Soap Photo Here</div>
+            <h3>Frankincense Soap</h3>
+            <p class="price">Pure Dhofar Essence</p>
+            <a href="#" class="btn-order">Order Now</a>
+        </div>
+        <div class="item-card">
+            <div class="item-img">Soap Photo Here</div>
+            <h3>Sidr Leaf Soap</h3>
+            <p class="price">Traditional Cleanse</p>
+            <a href="#" class="btn-order">Order Now</a>
+        </div>
+    </div>
+
 </div>
 
-<footer style="padding: 40px 5%; border-top: 1px solid #222; color: #555; font-size: 0.8rem;">
-    &copy; 2026 TURATH. All Rights Reserved.
+<footer style="text-align: center; padding: 60px; color: #444; font-size: 0.7rem; letter-spacing: 2px;">
+    &copy; 2026 TURATH BRAND | THE HEART OF ARABIA
 </footer>
 
 </body>
