@@ -3,181 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TURATH | Arabic Heritage</title>
+    <title>TURATH | Wear Your Heritage</title>
     <style>
-        :root { --gold: #c5a059; --black: #000000; --soft-glow: rgba(197, 160, 89, 0.2); }
-        * { box-sizing: border-box; scroll-behavior: smooth; }
+        :root { --gold: #c5a059; --black: #0d0d0d; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
-            margin: 0; 
             background-color: var(--black); 
-            color: #ffffff; 
-            font-family: 'Times New Roman', serif; 
+            color: white; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
         }
 
-        /* Centered Header with Glow */
-        header {
-            padding: 40px 20px 20px;
-            text-align: center;
-            background: radial-gradient(circle at center, var(--soft-glow) 0%, rgba(0,0,0,0) 60%);
-        }
-
-        .logo-main {
-            width: 120px; /* Small and elegant */
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            /* Makes the logo feel part of the glow */
-            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4));
-        }
-
-        h1 { 
-            color: var(--gold); 
-            letter-spacing: 8px; 
-            font-size: 1.2rem; 
-            margin: 15px 0 0; 
-            font-weight: normal;
-            text-transform: uppercase;
-        }
-
-        /* Navigation Bar */
+        /* Top Navigation Bar - Matches the Shopify look */
         nav {
-            margin: 20px 0;
-            text-align: center;
-            border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 5%;
+            background: var(--black);
+            border-bottom: 1px solid #222;
         }
 
-        nav a { 
-            color: #aaa; 
-            text-decoration: none; 
-            margin: 0 10px; 
-            font-size: 0.7rem; 
-            letter-spacing: 2px; 
+        .nav-logo {
+            height: 50px; /* Small and elegant on the left */
+            width: auto;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
+        }
+
+        /* Large Hero Image Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1519011985187-444d62641929?q=80&w=2000'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px 5%;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text p {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
         /* Product Sections */
-        .container { padding: 20px 5% 100px; }
-        
-        .section-title {
-            color: var(--gold);
-            text-align: left;
-            letter-spacing: 3px;
-            font-size: 1rem;
-            margin: 50px 0 20px;
-            text-transform: uppercase;
-            border-left: 2px solid var(--gold);
-            padding-left: 15px;
+        .section-padding { padding: 60px 5%; }
+        .section-title { 
+            font-size: 1.5rem; 
+            margin-bottom: 30px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
         }
 
-        .grid {
+        .product-grid {
             display: grid;
-            /* This makes it 2 columns on phone, 3 or 4 on computer */
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
-        .product-card {
-            background: #080808;
-            border: 1px solid #1a1a1a;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .product-img {
-            width: 100%;
-            aspect-ratio: 1/1; /* Keeps boxes square */
-            background: #111;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.6rem;
-            color: #444;
-        }
-
-        .product-card h3 {
-            font-size: 0.8rem;
-            margin: 10px 0 5px;
-            font-weight: normal;
-            letter-spacing: 1px;
-        }
-
-        .btn {
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 6px 12px;
-            text-decoration: none;
-            font-size: 0.6rem;
-            display: inline-block;
-            margin-top: 5px;
-            text-transform: uppercase;
-        }
-
-        /* Mobile specific adjustments */
         @media (min-width: 768px) {
-            .grid { grid-template-columns: repeat(4, 1fr); }
-            .logo-main { width: 160px; }
+            .product-grid { grid-template-columns: repeat(4, 1fr); }
+            .hero-text h1 { font-size: 4.5rem; }
+        }
+
+        .card { text-align: left; }
+        .card-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: #1a1a1a;
+            margin-bottom: 10px;
+            border: 1px solid #222;
+        }
+        .card h3 { font-size: 0.9rem; font-weight: normal; margin-bottom: 5px; }
+        .card p { color: var(--gold); font-size: 0.85rem; }
+
+        .btn-white {
+            background: white;
+            color: black;
+            padding: 12px 30px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="Logo.png" alt="Turath" class="logo-main">
-    <h1>TURATH</h1>
-</header>
-
 <nav>
-    <a href="#thobes">Thobes</a>
-    <a href="#perfumes">Perfumes</a>
-    <a href="#accessories">Accessories</a>
+    <img src="Logo.png" alt="Turath" class="nav-logo">
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
-<div class="container">
-    
-    <h2 class="section-title" id="thobes">Thobes</h2>
-    <div class="grid">
-        <div class="product-card">
-            <div class="product-img">Omani 32</div>
-            <h3>Omani Collection</h3>
-            <a href="#" class="btn">View</a>
+<section class="hero">
+    <div class="hero-text">
+        <p>Welcome Industry Insiders</p>
+        <h1>Wear Your Heritage.</h1>
+        <a href="#catalog" class="btn-white">Shop Collections</a>
+    </div>
+</section>
+
+<div class="section-padding" id="catalog">
+    <h2 class="section-title">Turath Collections</h2>
+    <div class="product-grid">
+        <div class="card">
+            <div class="card-img"></div>
+            <h3>Omani Thobe</h3>
+            <p>View Collection</p>
         </div>
-        <div class="product-card">
-            <div class="product-img">Kuwaiti</div>
-            <h3>Kuwaiti Style</h3>
-            <a href="#" class="btn">View</a>
+        <div class="card">
+            <div class="card-img"></div>
+            <h3>Kuwaiti Dishdasha</h3>
+            <p>View Collection</p>
+        </div>
+        <div class="card">
+            <div class="card-img"></div>
+            <h3>Signature Perfumes</h3>
+            <p>Discover Scents</p>
+        </div>
+        <div class="card">
+            <div class="card-img"></div>
+            <h3>Accessories</h3>
+            <p>Shop Now</p>
         </div>
     </div>
-
-    <h2 class="section-title" id="perfumes">Perfumes</h2>
-    <div class="grid">
-        <div class="product-card">
-            <div class="product-img">Oud Oil</div>
-            <h3>Signature Oud</h3>
-            <a href="#" class="btn">View</a>
-        </div>
-        <div class="product-card">
-            <div class="product-img">Musk</div>
-            <h3>Royal Musk</h3>
-            <a href="#" class="btn">View</a>
-        </div>
-    </div>
-
-    <h2 class="section-title" id="accessories">Accessories</h2>
-    <div class="grid">
-        <div class="product-card">
-            <div class="product-img">Shemagh</div>
-            <h3>Fine Headwear</h3>
-            <a href="#" class="btn">View</a>
-        </div>
-    </div>
-
 </div>
 
-<footer style="text-align:center; color:#333; font-size:0.7rem; padding-bottom:50px;">
-    &copy; 2026 TURATH HERITAGE
+<footer style="padding: 40px 5%; border-top: 1px solid #222; color: #555; font-size: 0.8rem;">
+    &copy; 2026 TURATH. All Rights Reserved.
 </footer>
 
 </body>
