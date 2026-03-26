@@ -3,38 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TURATH | Arabic Heritage</title>
+    <title>TURATH | The Heritage Brand</title>
     <style>
-        :root { --gold: #c5a059; --black: #080808; }
-        body { margin: 0; background: var(--black); color: white; font-family: 'Georgia', serif; text-align: center; }
-        nav { padding: 20px; border-bottom: 1px solid #222; }
+        :root { --gold: #c5a059; --black: #0a0a0a; --dark-brown: #1a1510; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body { 
+            margin: 0; 
+            background-color: var(--black); 
+            color: #ffffff; 
+            font-family: 'Times New Roman', serif; 
+            /* This adds a subtle desert sand texture to the background */
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url('https://www.transparenttextures.com/patterns/sandpaper.png');
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #1a1510, var(--black));
+        }
+
+        .logo-main {
+            max-width: 350px;
+            width: 90%;
+            filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.4));
+        }
+
+        h1 { color: var(--gold); letter-spacing: 10px; font-weight: normal; margin-top: 20px; }
+
+        nav {
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.95);
+            z-index: 1000;
+        }
+
         nav a { color: var(--gold); text-decoration: none; margin: 0 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
-        .hero { padding: 100px 20px; }
-        /* This makes your Falcon Logo look amazing */
-        .logo-img { max-width: 100%; width: 400px; height: auto; margin-bottom: 20px; }
-        h1 { color: var(--gold); letter-spacing: 8px; font-weight: normal; }
-        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 15px 30px; text-decoration: none; display: inline-block; margin-top: 30px; transition: 0.3s; }
+
+        .section-title {
+            text-align: center;
+            color: var(--gold);
+            letter-spacing: 5px;
+            margin: 80px 0 40px;
+            text-transform: uppercase;
+        }
+
+        /* Product Gallery */
+        .container { padding: 0 10% 100px; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+        .img-placeholder {
+            width: 100%;
+            height: 350px;
+            background: #1a1a1a;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-style: italic;
+        }
+
+        .price { color: var(--gold); display: block; margin: 10px 0; font-size: 1.2rem; }
+
+        .btn {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 12px 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
         .btn:hover { background: var(--gold); color: black; }
-        section { padding: 60px 10%; line-height: 1.8; color: #aaa; }
+
+        footer { padding: 80px 20px; text-align: center; border-top: 1px solid #222; color: #555; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
+<header>
+    <img src="Logo.png" alt="Turath Falcon Logo" class="logo-main">
+    <h1>TURATH</h1>
+    <p style="letter-spacing: 4px; color: #888;">HERITAGE & LEGACY</p>
+</header>
+
 <nav>
-    <a href="#">Home</a>
-    <a href="#about">Our Story</a>
-    <a href="#contact">Contact</a>
+    <a href="#thobes">Thobes</a>
+    <a href="#perfumes">Perfumes</a>
+    <a href="#accessories">Accessories</a>
 </nav>
 
-<div class="hero">
-    <img src="Logo.png" alt="Turath Logo" class="logo-img">
-    <h1>TURATH</h1>
-    <p>Authentic Arabic Heritage & Fine Attire</p>
-    <a href="mailto:info@turath.com" class="btn">INQUIRE NOW</a>
+<div class="container">
+    
+    <h2 class="section-title" id="thobes">The Thobe Collection</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="img-placeholder">Omani Thobe Photo</div>
+            <h3>Omani 32 Edition</h3>
+            <span class="price">Premium Heritage</span>
+            <a href="#" class="btn">ENQUIRE</a>
+        </div>
+        <div class="product-card">
+            <div class="img-placeholder">Kuwaiti Thobe Photo</div>
+            <h3>Kuwaiti Classic</h3>
+            <span class="price">Tailored Perfection</span>
+            <a href="#" class="btn">ENQUIRE</a>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="perfumes">Signature Scents</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="img-placeholder">Perfume Bottle Photo</div>
+            <h3>Desert Oud</h3>
+            <span class="price">Pure Oil</span>
+            <a href="#" class="btn">DISCOVER</a>
+        </div>
+    </div>
+
 </div>
 
-<section id="about">
-    <h2 style="color:var(--gold)">THE LEGACY</h2>
+<footer>
+    &copy; 2026 TURATH BRAND. LOCATED IN THE HEART OF ARABIA.
+</footer>
+
+</body>
+</html>    <h2 style="color:var(--gold)">THE LEGACY</h2>
     <p>From Omani Thobes to the finest perfumes, Turath is a tribute to the soul of the Arabian Peninsula. We preserve the dignity of our heritage for the modern world.</p>
 </section>
 
