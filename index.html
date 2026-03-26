@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TURATH | The Heritage Brand</title>
+    <title>TURATH | Arabic Heritage</title>
     <style>
-        :root { --gold: #c5a059; --black: #0a0a0a; --dark-brown: #1a1510; }
+        :root { --gold: #c5a059; --black: #000000; --soft-glow: rgba(197, 160, 89, 0.2); }
         * { box-sizing: border-box; scroll-behavior: smooth; }
         
         body { 
@@ -13,99 +13,120 @@
             background-color: var(--black); 
             color: #ffffff; 
             font-family: 'Times New Roman', serif; 
-            /* This adds a subtle desert sand texture to the background */
-            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url('https://www.transparenttextures.com/patterns/sandpaper.png');
         }
 
+        /* Centered Header with Glow */
         header {
-            padding: 60px 20px;
+            padding: 40px 20px 20px;
             text-align: center;
-            background: linear-gradient(to bottom, #1a1510, var(--black));
+            background: radial-gradient(circle at center, var(--soft-glow) 0%, rgba(0,0,0,0) 60%);
         }
 
         .logo-main {
-            max-width: 350px;
-            width: 90%;
-            filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.4));
+            width: 120px; /* Small and elegant */
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            /* Makes the logo feel part of the glow */
+            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4));
         }
 
-        h1 { color: var(--gold); letter-spacing: 10px; font-weight: normal; margin-top: 20px; }
-
-        nav {
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            background: rgba(10, 10, 10, 0.95);
-            z-index: 1000;
-        }
-
-        nav a { color: var(--gold); text-decoration: none; margin: 0 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
-
-        .section-title {
-            text-align: center;
-            color: var(--gold);
-            letter-spacing: 5px;
-            margin: 80px 0 40px;
+        h1 { 
+            color: var(--gold); 
+            letter-spacing: 8px; 
+            font-size: 1.2rem; 
+            margin: 15px 0 0; 
+            font-weight: normal;
             text-transform: uppercase;
         }
 
-        /* Product Gallery */
-        .container { padding: 0 10% 100px; }
-        .product-grid {
+        /* Navigation Bar */
+        nav {
+            margin: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 15px;
+        }
+
+        nav a { 
+            color: #aaa; 
+            text-decoration: none; 
+            margin: 0 10px; 
+            font-size: 0.7rem; 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+        }
+
+        /* Product Sections */
+        .container { padding: 20px 5% 100px; }
+        
+        .section-title {
+            color: var(--gold);
+            text-align: left;
+            letter-spacing: 3px;
+            font-size: 1rem;
+            margin: 50px 0 20px;
+            text-transform: uppercase;
+            border-left: 2px solid var(--gold);
+            padding-left: 15px;
+        }
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            /* This makes it 2 columns on phone, 3 or 4 on computer */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px;
         }
 
         .product-card {
-            background: #111;
-            border: 1px solid #222;
-            padding: 20px;
+            background: #080808;
+            border: 1px solid #1a1a1a;
+            padding: 10px;
             text-align: center;
-            transition: 0.3s;
         }
 
-        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-
-        .img-placeholder {
+        .product-img {
             width: 100%;
-            height: 350px;
-            background: #1a1a1a;
-            margin-bottom: 20px;
-            border: 1px solid #333;
+            aspect-ratio: 1/1; /* Keeps boxes square */
+            background: #111;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 0.6rem;
             color: #444;
-            font-style: italic;
         }
 
-        .price { color: var(--gold); display: block; margin: 10px 0; font-size: 1.2rem; }
+        .product-card h3 {
+            font-size: 0.8rem;
+            margin: 10px 0 5px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
 
         .btn {
             border: 1px solid var(--gold);
             color: var(--gold);
-            padding: 12px 25px;
+            padding: 6px 12px;
             text-decoration: none;
+            font-size: 0.6rem;
             display: inline-block;
-            margin-top: 10px;
-            transition: 0.3s;
+            margin-top: 5px;
+            text-transform: uppercase;
         }
 
-        .btn:hover { background: var(--gold); color: black; }
-
-        footer { padding: 80px 20px; text-align: center; border-top: 1px solid #222; color: #555; font-size: 0.8rem; }
+        /* Mobile specific adjustments */
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: repeat(4, 1fr); }
+            .logo-main { width: 160px; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="Logo.png" alt="Turath Falcon Logo" class="logo-main">
+    <img src="Logo.png" alt="Turath" class="logo-main">
     <h1>TURATH</h1>
-    <p style="letter-spacing: 4px; color: #888;">HERITAGE & LEGACY</p>
 </header>
 
 <nav>
@@ -116,45 +137,47 @@
 
 <div class="container">
     
-    <h2 class="section-title" id="thobes">The Thobe Collection</h2>
-    <div class="product-grid">
+    <h2 class="section-title" id="thobes">Thobes</h2>
+    <div class="grid">
         <div class="product-card">
-            <div class="img-placeholder">Omani Thobe Photo</div>
-            <h3>Omani 32 Edition</h3>
-            <span class="price">Premium Heritage</span>
-            <a href="#" class="btn">ENQUIRE</a>
+            <div class="product-img">Omani 32</div>
+            <h3>Omani Collection</h3>
+            <a href="#" class="btn">View</a>
         </div>
         <div class="product-card">
-            <div class="img-placeholder">Kuwaiti Thobe Photo</div>
-            <h3>Kuwaiti Classic</h3>
-            <span class="price">Tailored Perfection</span>
-            <a href="#" class="btn">ENQUIRE</a>
+            <div class="product-img">Kuwaiti</div>
+            <h3>Kuwaiti Style</h3>
+            <a href="#" class="btn">View</a>
         </div>
     </div>
 
-    <h2 class="section-title" id="perfumes">Signature Scents</h2>
-    <div class="product-grid">
+    <h2 class="section-title" id="perfumes">Perfumes</h2>
+    <div class="grid">
         <div class="product-card">
-            <div class="img-placeholder">Perfume Bottle Photo</div>
-            <h3>Desert Oud</h3>
-            <span class="price">Pure Oil</span>
-            <a href="#" class="btn">DISCOVER</a>
+            <div class="product-img">Oud Oil</div>
+            <h3>Signature Oud</h3>
+            <a href="#" class="btn">View</a>
+        </div>
+        <div class="product-card">
+            <div class="product-img">Musk</div>
+            <h3>Royal Musk</h3>
+            <a href="#" class="btn">View</a>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="accessories">Accessories</h2>
+    <div class="grid">
+        <div class="product-card">
+            <div class="product-img">Shemagh</div>
+            <h3>Fine Headwear</h3>
+            <a href="#" class="btn">View</a>
         </div>
     </div>
 
 </div>
 
-<footer>
-    &copy; 2026 TURATH BRAND. LOCATED IN THE HEART OF ARABIA.
-</footer>
-
-</body>
-</html>    <h2 style="color:var(--gold)">THE LEGACY</h2>
-    <p>From Omani Thobes to the finest perfumes, Turath is a tribute to the soul of the Arabian Peninsula. We preserve the dignity of our heritage for the modern world.</p>
-</section>
-
-<footer style="padding: 40px; color: #444; font-size: 0.8rem;">
-    &copy; 2026 TURATH BRAND. ALL RIGHTS RESERVED.
+<footer style="text-align:center; color:#333; font-size:0.7rem; padding-bottom:50px;">
+    &copy; 2026 TURATH HERITAGE
 </footer>
 
 </body>
