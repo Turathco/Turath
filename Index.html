@@ -3,110 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TURATH | Authentic Arabic Heritage</title>
+    <title>TURATH | Arabic Heritage</title>
     <style>
-        :root { --gold: #c5a059; --black: #080808; --gray: #151515; }
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { margin: 0; background: var(--black); color: white; font-family: 'Georgia', serif; }
-        
-        /* Navigation */
-        nav { background: rgba(8, 8, 8, 0.95); padding: 20px; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #222; text-align: center; }
+        :root { --gold: #c5a059; --black: #080808; }
+        body { margin: 0; background: var(--black); color: white; font-family: 'Georgia', serif; text-align: center; }
+        nav { padding: 20px; border-bottom: 1px solid #222; }
         nav a { color: var(--gold); text-decoration: none; margin: 0 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
-
-        /* Hero / Logo Section */
-        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; background: linear-gradient(to bottom, rgba(0,0,0,0.8), var(--black)), url('https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=2000'); background-size: cover; }
-        .logo-img { max-width: 300px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3)); }
-        .hero h1 { font-size: 3.5rem; letter-spacing: 10px; margin: 10px 0; color: var(--gold); }
-
-        /* Sections */
-        section { padding: 100px 10%; border-bottom: 1px solid #111; }
-        h2 { text-align: center; color: var(--gold); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 50px; }
-
-        /* Products Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: var(--gray); padding: 20px; border: 1px solid #222; text-align: center; transition: 0.3s; }
-        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .card img { width: 100%; height: 350px; object-fit: cover; background: #222; margin-bottom: 15px; }
-
-        /* Contact & Info */
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        .info-box p { color: #888; margin: 10px 0; }
-        .social-links a { display: inline-block; margin-right: 15px; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 10px 20px; margin-top: 20px; }
-        
-        input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: white; }
-        .btn { background: var(--gold); color: black; border: none; padding: 15px 40px; cursor: pointer; font-weight: bold; width: 100%; }
-
-        @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
+        .hero { padding: 100px 20px; }
+        /* This makes your Falcon Logo look amazing */
+        .logo-img { max-width: 100%; width: 400px; height: auto; margin-bottom: 20px; }
+        h1 { color: var(--gold); letter-spacing: 8px; font-weight: normal; }
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 15px 30px; text-decoration: none; display: inline-block; margin-top: 30px; transition: 0.3s; }
+        .btn:hover { background: var(--gold); color: black; }
+        section { padding: 60px 10%; line-height: 1.8; color: #aaa; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#collection">Collection</a>
-    <a href="#about">About</a>
+    <a href="#">Home</a>
+    <a href="#about">Our Story</a>
     <a href="#contact">Contact</a>
 </nav>
 
-<section id="home" class="hero">
+<div class="hero">
     <img src="Logo.png" alt="Turath Logo" class="logo-img">
-    <p style="letter-spacing: 3px;">PREMIUM ARABIC HERITAGE</p>
-    <a href="#collection" class="btn" style="width: auto; margin-top: 20px;">SHOP NOW</a>
+    <h1>TURATH</h1>
+    <p>Authentic Arabic Heritage & Fine Attire</p>
+    <a href="mailto:info@turath.com" class="btn">INQUIRE NOW</a>
+</div>
+
+<section id="about">
+    <h2 style="color:var(--gold)">THE LEGACY</h2>
+    <p>From Omani Thobes to the finest perfumes, Turath is a tribute to the soul of the Arabian Peninsula. We preserve the dignity of our heritage for the modern world.</p>
 </section>
 
-<section id="collection">
-    <h2>The Collection</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="YOUR_IMAGE_LINK" alt="Omani Thobe">
-            <h3>Omani Collection</h3>
-            <p>Traditional hand-stitched 32 embroidery.</p>
-        </div>
-        <div class="card">
-            <img src="YOUR_IMAGE_LINK" alt="Kuwaiti Thobe">
-            <h3>Kuwaiti Style</h3>
-            <p>Clean, structured architectural design.</p>
-        </div>
-        <div class="card">
-            <img src="YOUR_IMAGE_LINK" alt="Perfume">
-            <h3>Royal Oud</h3>
-            <p>Signature scents from the deep desert.</p>
-        </div>
-    </div>
-</section>
-
-<section id="about" style="background: #0c0c0c; text-align: center;">
-    <h2>Our Heritage</h2>
-    <p style="max-width: 700px; margin: 0 auto; line-height: 2; font-style: italic; color: #aaa;">
-        Turath was founded to protect the legacy of Arabic attire. We believe that what you wear is a story of where you came from. From the falcon in our logo to the threads in our thobes, everything represents strength, vision, and the timeless culture of our home.
-    </p>
-</section>
-
-<section id="contact">
-    <h2>Find Us</h2>
-    <div class="contact-container">
-        <div class="info-box">
-            <h3>Contact Information</h3>
-            <p><strong>Email:</strong> info@turath.com</p>
-            <p><strong>Location:</strong> Kuwait City / Muscat (Online Worldwide)</p>
-            <p><strong>Join the Community:</strong></p>
-            <div class="social-links">
-                <a href="PASTE_DISCORD_LINK">DISCORD</a>
-                <a href="#">INSTAGRAM</a>
-            </div>
-        </div>
-        <div class="form-box">
-            <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Inquiry (Size, Style, or Custom)" required></textarea>
-                <button type="submit" class="btn">SEND MESSAGE</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<footer style="padding: 50px; text-align: center; font-size: 0.8rem; color: #444;">
+<footer style="padding: 40px; color: #444; font-size: 0.8rem;">
     &copy; 2026 TURATH BRAND. ALL RIGHTS RESERVED.
 </footer>
 
